@@ -1,0 +1,75 @@
+name: HouseplantRoster
+options:
+  bundleIdPrefix: com.shimondeitel.houseplantroster
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  HouseplantRoster:
+    type: application
+    platform: iOS
+    sources:
+      - path: HouseplantRoster
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.houseplantroster
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: HouseplantRoster/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  HouseplantRosterTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: HouseplantRosterTests
+      - path: HouseplantRoster.storekit
+    dependencies:
+      - target: HouseplantRoster
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.houseplantroster.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  HouseplantRosterUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: HouseplantRosterUITests
+    dependencies:
+      - target: HouseplantRoster
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.houseplantroster.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  HouseplantRoster:
+    build:
+      targets:
+        HouseplantRoster: all
+        HouseplantRosterTests: [test]
+        HouseplantRosterUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: HouseplantRoster.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: HouseplantRoster.storekit
+      targets:
+        - HouseplantRosterTests
+        - HouseplantRosterUITests
+    archive:
+      config: Release

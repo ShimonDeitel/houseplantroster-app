@@ -1,0 +1,44 @@
+{
+  "identifier" : "HouseplantRoster",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "houseplantroster_pro_group",
+      "localizations" : [],
+      "name" : "HouseplantRoster Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "houseplantroster_pro_monthly",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlock Custom watering-schedule reminders per plant",
+              "displayName" : "HouseplantRoster Pro",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.shimondeitel.houseplantroster.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "HouseplantRoster Pro Monthly",
+          "subscriptionGroupID" : "houseplantroster_pro_group",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
